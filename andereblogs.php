@@ -28,9 +28,9 @@
     ?>
 
             <div class="form-actions">
-                <form method="get" action="blog.php">
+                <form method="get" action="../blog">
                     <button class="btn btn-primary" type="submit">Blog schreiben</button>
-                    <a href="blog.php" class="btn">Zum Blog</a>
+                    <a href="../blog" class="btn">Zum Blog</a>
                 </form>
             </div>
 
