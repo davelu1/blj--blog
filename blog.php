@@ -2,8 +2,8 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Meine Seite</title>
-    <link rel="stylesheet" href="public/css/app.css">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -23,18 +23,29 @@
 		</div>
 
 		<input type="submit" value="Speichern">
-		<br><h1>Blog Einträge:</h1>
-	<div class="guestbook-list">
+		<a href ="andereblogs.php">zu den anderen Blogs</a>
+		<br><h1>Blog Einträge:</h1><br>
+
+		<div class="blog-list">
 		<?php foreach ($entries as $entry) {?>
-			<div class="guestbook-entry">
-                <h1 class = "nameausgabe"><?= htmlspecialchars($entry['name'] , ENT_QUOTES,  'UTF-8'); ?></h1>
-                <p class = "kommentar"><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></p> <br>
+			<div class="blog-entry">
+			<?php
+
+				$entry = preg_replace("/(.{80})/mi", "$1\n", $entry);
+
+			?>
+                <h3><?= htmlspecialchars($entry['name'] , ENT_QUOTES,  'UTF-8'); ?></h3>
+				<p><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></p>
+				<p><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></p>
             </div>
-        <?php } ?>
+		<?php } ?>
+		
+		<?php
+
+		?>
 	</div>
 
 	</form>
-
 
 </body>
 </html>
