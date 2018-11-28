@@ -35,26 +35,20 @@
 
 		<br><h1>Blog Einträge:</h1><br>
 
-		<div class="blog-list">
-		<?php foreach ($entries as $entry) {?>
-			<div class="blog-entry">
-			<?php
-
-				$entry = preg_replace("/(.{80})/mi", "$1\n", $entry);
-
-			?>
-                <h3><?= htmlspecialchars($entry['name'] , ENT_QUOTES,  'UTF-8'); ?></h3>
-				<p><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></p>
-				<p><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></p>
-				<?php if( htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
-        		?><img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild">
-
-		<?php } 
-		}?>
-		
-
+<div class="blog-list">
+	<?php foreach ($entries as $entry) {?>
+    <div class="blog-entry">
+		<?php 
+		$entry = preg_replace("/(.{80})/mi","$1\n", $entry);
+		?>
+       		<h2><?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?></h2>
+        	<div><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></div><br><br>
+			<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
+        	?><img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild">
+			<?php } ?>
+			<div class="date"><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></div><br>
+			</div><?php } ?>
 	</div>
-		
 	</form>
 
 </body>
