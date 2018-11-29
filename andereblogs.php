@@ -10,7 +10,7 @@
     <div class="wrapper">
 
         <h1 class="form-title">Alle Blogs</h1>
-        <p>Das sind die persöndlichen Blogs von den andern</p>
+        <p class="ueberschrift">Wählen sie einen Blog einer Person aus:</p>
 <?php
     $user = 'guest';
     $pass = 'blj12345';

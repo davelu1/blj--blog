@@ -36,6 +36,9 @@
 			<a href ="andereblogs.php" class="linkotherblog"></a>
 			<button onclick="window.location.href='andereblogs.php'">Zu den anderen Blogs</button>
 
+		
+
+
 			<br><h1>Blog Einträge:</h1><br>
 
 <div class="blog-list">
@@ -51,9 +54,27 @@
         	?><img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild">
 			<?php } ?><br><br>
 
-			<button type="button" value="submit"><img class ="thumbup" src="bilder/pfeil_oben.png"></button>
-			<button type="button" value="submit"><img class ="thumbdown" src="bilder/pfeil_unten.png"></button><br><br>
 
+			<button type="button" value="submit"><img class ="thumbup" src="bilder/pfeil_oben.png">
+			<?php 
+
+			$like = 1;
+			$dislike = 1;
+
+			echo $like;
+			?></button>
+
+			<button type="button" value="submit"><img class ="thumbdown" src="bilder/pfeil_unten.png">
+			<?php 
+
+				$like = 1;
+				$dislike = 1;
+			
+				echo $like;
+			?></button>
+			<div class="comment">
+			<button onclick="window.location.href='rate.php'">Kommentar abgeben</button><br><br>
+			</div>
 			<div class="date"><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></div><br>
 			</div><?php } ?>
 	</div>

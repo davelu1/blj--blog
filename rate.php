@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<h1 class="titel">Bewertung zu einem Blog schreiben</h1>
+	<h1 class="titel">Kommentar zum Blog schreiben</h1>
 
 	<form action="add" method="POST">
 

@@ -62,11 +62,21 @@ label{
 .thumbup {
 	height: 30px;
 	width: 20px;
+	cursor: pointer;
 }
 
 .thumbdown {
 	height: 30px;
 	width: 20px;
+	cursor: pointer;
+}
+
+.comment{
+	margin-left: 500px;
+	margin-top: -40px;
+}
+.ueberschrift{
+	color: white;
 }
 
 /* 
