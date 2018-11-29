@@ -7,10 +7,11 @@ $dbh = connectToDatabase();
 // name, varchar
 // message, text
 
-$statement = $dbh->prepare('INSERT INTO entries (name, message, date, image) VALUES (:name, :message, NOW(), :image)');
+$statement = $dbh->prepare('INSERT INTO entries (name, title, message, date, image) VALUES (:name, :title, :message, NOW(), :image)');
 $statement->bindParam(':name', $_POST['name']);
 $statement->bindParam(':message', $_POST['message']);
 $statement->bindParam(':image', $_POST['link']);
+$statement->bindParam(':title', $_POST['title']);
 
 $statement->execute();
 
