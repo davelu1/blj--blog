@@ -21,9 +21,6 @@
 				<label for="message">Nachricht</label>
 				<textarea type="text" id="message" name="message" required></textarea>
             </div>
-            
-
-
 
 
     <input class ="button" type="submit" value="Speichern">

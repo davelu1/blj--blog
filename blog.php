@@ -49,7 +49,11 @@
         	<div><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></div><br><br>
 			<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
         	?><img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild">
-			<?php } ?>
+			<?php } ?><br><br>
+
+			<button type="button" value="submit"><img class ="thumbup" src="bilder/pfeil_oben.png"></button>
+			<button type="button" value="submit"><img class ="thumbdown" src="bilder/pfeil_unten.png"></button><br><br>
+
 			<div class="date"><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></div><br>
 			</div><?php } ?>
 	</div>

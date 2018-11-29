@@ -59,6 +59,15 @@ label{
 	height: 100%;
 }
 
+.thumbup {
+	height: 30px;
+	width: 20px;
+}
+
+.thumbdown {
+	height: 30px;
+	width: 20px;
+}
 
 /* 
 
