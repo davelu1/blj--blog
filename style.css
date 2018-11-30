@@ -22,6 +22,12 @@ color: white;
 	color: white;
 }
 
+.blog-rating {
+	margin-bottom: 20px;
+	border-bottom: 1px solid white;
+	color: white;
+}
+
 .form-field {
 	margin-bottom: 20px;
 }
@@ -78,6 +84,7 @@ label{
 .ueberschrift{
 	color: white;
 }
+
 
 /* 
 

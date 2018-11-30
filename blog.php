@@ -6,9 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 	<h1 class="titel">Dave's Blog</h1>
-
 	<form action="add" method="POST">
 		<h4>Neuen Eintrag erstellen</h4>
 		
@@ -33,52 +31,53 @@
 			</div>
 
 			<input type="submit" value="Speichern">
-			<a href ="andereblogs.php" class="linkotherblog"></a>
-			<button onclick="window.location.href='andereblogs.php'">Zu den anderen Blogs</button>
-
-		
-
-
-			<br><h1>Blog Einträge:</h1><br>
-
-<div class="blog-list">
-	<?php foreach ($entries as $entry) {?>
-    <div class="blog-entry">
-		<?php 
-		$entry = preg_replace("/(.{80})/mi","$1\n", $entry);
-		?>
-			   <h2><?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?></h2>
-			   <h3><?= htmlspecialchars($entry['title'] , ENT_QUOTES, 'UTF-8'); ?></h3>
-        	<div><?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?></div><br><br>
-			<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''){
-        	?><img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild">
-			<?php } ?><br><br>
-
-
-			<button type="button" value="submit"><img class ="thumbup" src="bilder/pfeil_oben.png">
-			<?php 
-
-			$like = 1;
-			$dislike = 1;
-
-			echo $like;
-			?></button>
-
-			<button type="button" value="submit"><img class ="thumbdown" src="bilder/pfeil_unten.png">
-			<?php 
-
-				$like = 1;
-				$dislike = 1;
+			<button type="button" onclick="window.location.href='andereblogs.php'">Zu den anderen Blogs
+			</button>
+		</form>
 			
-				echo $like;
-			?></button>
-			<div class="comment">
-			<button onclick="window.location.href='rate.php'">Kommentar abgeben</button><br><br>
-			</div>
-			<div class="date"><?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?></div><br>
-			</div><?php } ?>
-	</div>
-	</form>
+		<br>
+		<h1>Blog Einträge:</h1><br>
 
+	<div class="blog-list">
+		<?php foreach ($entries as $entry): ?>
+			<div class="blog-entry">
+				<?php 
+					$entry = preg_replace("/(.{80})/mi","$1\n", $entry);
+				?>
+				<h2>
+					<?= htmlspecialchars($entry['name'] , ENT_QUOTES, 'UTF-8'); ?>
+				</h2>
+				<h3>
+					<?= htmlspecialchars($entry['title'] , ENT_QUOTES, 'UTF-8'); ?>
+				</h3>
+				<div>
+					<?= htmlspecialchars($entry['message'], ENT_QUOTES, 'UTF-8'); ?>
+				</div>
+				<br>
+				<br>
+				<?php if(htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8") !== ''): ?>
+					<img class= "images" src= <?=htmlspecialchars($entry['image'], ENT_QUOTES, "UTF-8");?> alt="Bild ist zu Gross">
+				<?php endif; ?>	
+				<br>
+				<br>
+				<button type="button" name="like" value="submit">
+					<img class ="thumbup" src="bilder/pfeil_oben.png">
+				</button>
+				<button type="button" name="dislike" value="submit">
+					<img class ="thumbdown" src="bilder/pfeil_unten.png">
+				</button>
+				<div class="comment">
+					<form action="rate.php" method="post">
+						<button>Kommentar abgeben</button><br><br>
+						<input type="hidden" name="comment-id" value="<?= $entry["id"] ?>"/>
+					</form>
+				</div>
+				<div class="date">
+					<?= htmlspecialchars($entry['date'], ENT_QUOTES, 'UTF-8'); ?>
+				</div>
+				<br>
+			</div>
+		<?php endforeach; ?>
+	</div>
 </body>
 </html>
