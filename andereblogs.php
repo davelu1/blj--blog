@@ -12,9 +12,9 @@
         <h1 class="form-title">Alle Blogs</h1>
         <p class="ueberschrift">Wählen sie einen Blog einer Person aus:</p>
 <?php
-    $user = 'guest';
-    $pass = 'blj12345';
-    $dbh = new PDO('mysql:host=10.20.16.102;dbname=blogdb', $user, $pass);
+    $user = 'd041e_noahz';
+    $pass = '54321_Db!!!';
+    $dbh = new PDO('mysql:host=mysql5.webland.ch;dbname=d041e_noahz', $user, $pass);
     
     $stmt = $dbh->prepare('SELECT * FROM andereblogs');
     $stmt->execute();

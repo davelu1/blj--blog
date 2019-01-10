@@ -37,17 +37,27 @@
 
 
 <div class="blog-list">
+
 	<?php foreach ($rating as $rating) {?>
     <div class="blog-rating">
 		<?php 
-		$rating = preg_replace("/(.{80})/mi","$1\n", $rating);
+			$rating = preg_replace("/(.{80})/mi","$1\n", $rating);
 		?>
-			<h2><?= htmlspecialchars($rating['name'] , ENT_QUOTES, 'UTF-8'); ?></h2>
-        	<div><?= htmlspecialchars($rating['message'], ENT_QUOTES, 'UTF-8'); ?></div><br><br>
+		<h2>
+			<?= htmlspecialchars($rating['name'] , ENT_QUOTES, 'UTF-8'); ?>
+		</h2>
+		<div>
+			<?= htmlspecialchars($rating['message'], ENT_QUOTES, 'UTF-8'); ?>
+		</div>
+		<br><br>
 		
-			<div class="date"><?= htmlspecialchars($rating ['date'], ENT_QUOTES, 'UTF-8'); ?></div><br>
-			</div><?php } ?>
-			</div>
+		<div class="date">
+			<?= htmlspecialchars($rating ['date'], ENT_QUOTES, 'UTF-8'); ?>
+		</div>
+		<br>
+		</div>
+			<?php } ?>
+	</div>
 
 
 
